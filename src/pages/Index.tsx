@@ -2,9 +2,35 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import Icon from "@/components/ui/icon";
+import { useState } from "react";
 
 const Index = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const seminarImages = [
+    {
+      url: "https://cdn.poehali.dev/files/1925ea8d-3ac3-4b73-9278-f497358d3563.jpg",
+      title: "Семинар для медсестер в зеленой форме",
+      description: "Обучение медицинского персонала в конференц-зале"
+    },
+    {
+      url: "https://cdn.poehali.dev/files/66740d7e-0de7-422e-9996-95e47ca3033d.jpg",
+      title: "Врачи в белых халатах на лекции",
+      description: "Профессиональная подготовка медицинских работников"
+    },
+    {
+      url: "https://cdn.poehali.dev/files/32b7212d-e02b-48e0-8355-f5cc00f7195f.jpg",
+      title: "Презентация для медперсонала",
+      description: "Интерактивное обучение с использованием современных технологий"
+    },
+    {
+      url: "https://cdn.poehali.dev/files/64124aa4-fa95-4bbb-b61c-8e9e7c4b1a5f.jpg",
+      title: "Военные медики на учебе",
+      description: "Специализированная подготовка военного медицинского персонала"
+    }
+  ];
   const modules = [
     {
       title: "Основы ухода",
@@ -204,8 +230,70 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <section className="py-16 bg-soft-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-gray-800 mb-4">
+              Галерея семинаров
+            </h2>
+            <p className="text-lg text-warm-gray max-w-2xl mx-auto">
+              Фотографии с наших образовательных мероприятий для медицинского персонала
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {seminarImages.map((image, index) => (
+              <Dialog key={index}>
+                <DialogTrigger asChild>
+                  <Card className="border border-cream hover:border-coral/30 transition-all duration-300 bg-soft-white cursor-pointer group overflow-hidden">
+                    <CardContent className="p-0">
+                      <div className="relative overflow-hidden">
+                        <img 
+                          src={image.url}
+                          alt={image.title}
+                          className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                          <Icon name="ZoomIn" className="text-white" size={32} />
+                        </div>
+                      </div>
+                      <div className="p-4">
+                        <h3 className="font-montserrat font-semibold text-gray-800 mb-2 text-sm">
+                          {image.title}
+                        </h3>
+                        <p className="text-warm-gray text-xs">
+                          {image.description}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl w-full max-h-[90vh] p-0">
+                  <div className="relative w-full h-full">
+                    <img 
+                      src={image.url}
+                      alt={image.title}
+                      className="w-full h-auto max-h-[80vh] object-contain"
+                    />
+                    <div className="p-6">
+                      <h3 className="font-montserrat font-semibold text-gray-800 mb-2">
+                        {image.title}
+                      </h3>
+                      <p className="text-warm-gray">
+                        {image.description}
+                      </p>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Materials Section */}
-      <section id="materials" className="py-16 bg-soft-white">
+      <section id="materials" className="py-16 bg-gradient-to-br from-cream to-soft-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-gray-800 mb-4">
