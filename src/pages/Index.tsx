@@ -91,7 +91,7 @@ const Index = () => {
 
           <div className="bg-soft-white rounded-2xl p-8 shadow-sm border border-coral/10">
             <img 
-              src="/img/a0085574-e9c3-4bc8-a98f-a47996c273e0.jpg" 
+              src="/img/6d8e513d-c996-487a-a2a4-5fd2df7cb633.jpg" 
               alt="Профессиональный уход за пожилыми людьми"
               className="w-full h-64 object-cover rounded-xl mb-6"
             />
@@ -165,7 +165,7 @@ const Index = () => {
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-2xl mx-auto">
             <img 
-              src="/img/6a2c5dae-0026-401d-87be-9806ff22477b.jpg" 
+              src="/img/7853fab3-fb0f-41af-bf5b-2e020370c2dd.jpg" 
               alt="Сертификат о прохождении курса"
               className="w-32 h-32 object-cover rounded-full mx-auto mb-6 border-4 border-coral/20"
             />
