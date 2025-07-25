@@ -47,7 +47,7 @@ const Index = () => {
           <div className="flex items-center space-x-2">
             <Icon name="Heart" className="text-coral" size={24} />
             <span className="font-montserrat font-semibold text-xl text-gray-800">
-              Забота+
+              Школа заботливых сиделок
             </span>
           </div>
           <nav className="hidden md:flex space-x-8">
@@ -284,7 +284,7 @@ const Index = () => {
         <div className="container mx-auto px-4 text-center">
           <div className="flex items-center justify-center space-x-2 mb-4">
             <Icon name="Heart" className="text-coral" size={20} />
-            <span className="font-montserrat font-semibold text-lg">Забота+</span>
+            <span className="font-montserrat font-semibold text-lg">Школа заботливых сиделок</span>
           </div>
           <p className="text-sm">© 2024 Курс "Основы ухода за пожилыми людьми". Все права защищены.</p>
         </div>
